@@ -71,6 +71,5 @@ benchmark/main-benchmark
 *.out
 *.app
 .vs
-/NuGet/build/native
 /out/build/x64-Debug
 /src/Version.h

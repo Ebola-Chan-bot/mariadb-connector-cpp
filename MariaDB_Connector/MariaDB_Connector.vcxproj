@@ -21,8 +21,13 @@
   <ItemGroup>
     <ClCompile Include="..\src\CArray.cpp" />
     <ClCompile Include="..\src\DriverManager.cpp" />
+    <ClCompile Include="..\src\MariaDbDriver.cpp" />
+    <ClCompile Include="..\src\MariaDBException.cpp" />
     <ClCompile Include="..\src\SQLString.cpp" />
     <ClCompile Include="..\src\StringImp.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="mariadb_version.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
@@ -77,12 +82,12 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(SolutionDir)src;$(SolutionDir)include;$(SolutionDir)include\conncpp;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)MariaDB_Connector;$(SolutionDir)src;$(SolutionDir)include;$(SolutionDir)include\conncpp;$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)Nuget\build\native\</OutDir>
     <TargetName>$(ProjectName).$(Configuration)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(SolutionDir)src;$(SolutionDir)include;$(SolutionDir)include\conncpp;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)MariaDB_Connector;$(SolutionDir)src;$(SolutionDir)include;$(SolutionDir)include\conncpp;$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)Nuget\build\native\</OutDir>
     <TargetName>$(ProjectName).$(Configuration)</TargetName>
   </PropertyGroup>
