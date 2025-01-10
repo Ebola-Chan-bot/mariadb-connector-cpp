@@ -252,7 +252,7 @@ namespace sql
     SQLString HostAddress::toString() const
     {
       SQLString result("HostAddress{host='");
-      return  result.append(host).append("'").append(", port=") + std::to_string(port) + (!type.empty() ? (", type='"+type +"'") : "") +"}";
+      return  result.append(host).append("'").append(", port=") + std::to_string(port) + (!type.empty() ? (", type='" + type + "'") : SQLString{ "" }) + "}";
     }
 
     bool HostAddress::equals(HostAddress* obj)

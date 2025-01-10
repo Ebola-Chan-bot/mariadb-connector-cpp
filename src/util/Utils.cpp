@@ -754,7 +754,7 @@ namespace mariadb
 
   SQLString Utils::byteArrayToHexString(const char* bytes, size_t arrLen)
   {
-    return (arrLen > 0 ? getHex(bytes, arrLen) : "");
+      return (arrLen > 0 ? getHex(bytes, arrLen) : SQLString{ "" });
   }
 
   /**

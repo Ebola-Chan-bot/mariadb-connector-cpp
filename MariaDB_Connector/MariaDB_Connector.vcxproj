@@ -19,12 +19,76 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\libmariadb\libmariadb\mariadb_lib.c" />
+    <ClCompile Include="..\libmariadb\libmariadb\mariadb_stmt.c" />
+    <ClCompile Include="..\src\BasePrepareStatement.cpp" />
+    <ClCompile Include="..\src\cache\CallableStatementCache.cpp" />
+    <ClCompile Include="..\src\cache\CallableStatementCacheKey.cpp" />
+    <ClCompile Include="..\src\CallableParameterMetaData.cpp" />
+    <ClCompile Include="..\src\CallParameter.cpp" />
     <ClCompile Include="..\src\CArray.cpp" />
+    <ClCompile Include="..\src\ClientSidePreparedStatement.cpp" />
+    <ClCompile Include="..\src\ColumnDefinition.cpp" />
+    <ClCompile Include="..\src\ColumnType.cpp" />
+    <ClCompile Include="..\src\com\capi\ColumnDefinitionCapi.cpp" />
+    <ClCompile Include="..\src\com\capi\SelectResultSetCapi.cpp" />
+    <ClCompile Include="..\src\com\CmdInformationBatch.cpp" />
+    <ClCompile Include="..\src\com\CmdInformationMultiple.cpp" />
+    <ClCompile Include="..\src\com\CmdInformationSingle.cpp" />
+    <ClCompile Include="..\src\com\ColumnNameMap.cpp" />
+    <ClCompile Include="..\src\com\RowProtocol.cpp" />
+    <ClCompile Include="..\src\Consts.cpp" />
+    <ClCompile Include="..\src\credential\CredentialPluginLoader.cpp" />
     <ClCompile Include="..\src\DriverManager.cpp" />
+    <ClCompile Include="..\src\ExceptionFactory.cpp" />
+    <ClCompile Include="..\src\failover\FailoverProxy.cpp" />
+    <ClCompile Include="..\src\HostAddress.cpp" />
+    <ClCompile Include="..\src\logger\LoggerFactory.cpp" />
+    <ClCompile Include="..\src\logger\NoLogger.cpp" />
+    <ClCompile Include="..\src\logger\ProtocolLoggingProxy.cpp" />
+    <ClCompile Include="..\src\MariaDbConnection.cpp" />
+    <ClCompile Include="..\src\MariaDbDatabaseMetaData.cpp" />
     <ClCompile Include="..\src\MariaDbDriver.cpp" />
     <ClCompile Include="..\src\MariaDBException.cpp" />
+    <ClCompile Include="..\src\MariaDbParameterMetaData.cpp" />
+    <ClCompile Include="..\src\MariaDbPooledConnection.cpp" />
+    <ClCompile Include="..\src\MariaDbProcedureStatement.cpp" />
+    <ClCompile Include="..\src\MariaDbResultSetMetaData.cpp" />
+    <ClCompile Include="..\src\MariaDbSavepoint.cpp" />
+    <ClCompile Include="..\src\MariaDbStatement.cpp" />
+    <ClCompile Include="..\src\MariaDBWarning.cpp" />
+    <ClCompile Include="..\src\options\DefaultOptions.cpp" />
+    <ClCompile Include="..\src\options\Options.cpp" />
+    <ClCompile Include="..\src\parameters\BooleanParameter.cpp" />
+    <ClCompile Include="..\src\parameters\ByteArrayParameter.cpp" />
+    <ClCompile Include="..\src\parameters\DoubleParameter.cpp" />
+    <ClCompile Include="..\src\parameters\FloatParameter.cpp" />
+    <ClCompile Include="..\src\parameters\IntParameter.cpp" />
+    <ClCompile Include="..\src\parameters\LongParameter.cpp" />
+    <ClCompile Include="..\src\parameters\NullParameter.cpp" />
+    <ClCompile Include="..\src\parameters\ParameterHolder.cpp" />
+    <ClCompile Include="..\src\parameters\ShortParameter.cpp" />
+    <ClCompile Include="..\src\parameters\StreamParameter.cpp" />
+    <ClCompile Include="..\src\parameters\StringParameter.cpp" />
+    <ClCompile Include="..\src\parameters\ULongParameter.cpp" />
+    <ClCompile Include="..\src\protocol\capi\BinRowProtocolCapi.cpp" />
+    <ClCompile Include="..\src\protocol\capi\ConnectProtocol.cpp" />
+    <ClCompile Include="..\src\protocol\capi\QueryProtocol.cpp" />
+    <ClCompile Include="..\src\protocol\capi\TextRowProtocolCapi.cpp" />
+    <ClCompile Include="..\src\protocol\MasterProtocol.cpp" />
+    <ClCompile Include="..\src\Results.cpp" />
+    <ClCompile Include="..\src\SelectResultSet.cpp" />
+    <ClCompile Include="..\src\ServerSidePreparedStatement.cpp" />
+    <ClCompile Include="..\src\SimpleParameterMetaData.cpp" />
+    <ClCompile Include="..\src\SqlStates.cpp" />
     <ClCompile Include="..\src\SQLString.cpp" />
     <ClCompile Include="..\src\StringImp.cpp" />
+    <ClCompile Include="..\src\UrlParser.cpp" />
+    <ClCompile Include="..\src\util\ClientPrepareResult.cpp" />
+    <ClCompile Include="..\src\util\ServerPrepareResult.cpp" />
+    <ClCompile Include="..\src\util\String.cpp" />
+    <ClCompile Include="..\src\util\Utils.cpp" />
+    <ClCompile Include="..\src\util\Value.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mariadb_version.h" />
@@ -82,12 +146,12 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(SolutionDir)MariaDB_Connector;$(SolutionDir)src;$(SolutionDir)include;$(SolutionDir)include\conncpp;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)src;$(SolutionDir)include;$(SolutionDir)include\conncpp;$(SolutionDir)libmariadb\include;$(SolutionDir)MariaDB_Connector;$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)Nuget\build\native\</OutDir>
     <TargetName>$(ProjectName).$(Configuration)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(SolutionDir)MariaDB_Connector;$(SolutionDir)src;$(SolutionDir)include;$(SolutionDir)include\conncpp;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)src;$(SolutionDir)include;$(SolutionDir)include\conncpp;$(SolutionDir)libmariadb\include;$(SolutionDir)MariaDB_Connector;$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)Nuget\build\native\</OutDir>
     <TargetName>$(ProjectName).$(Configuration)</TargetName>
   </PropertyGroup>
