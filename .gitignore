@@ -73,3 +73,4 @@ benchmark/main-benchmark
 .vs
 /out/build/x64-Debug
 /src/Version.h
+build

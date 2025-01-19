@@ -19,8 +19,39 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\build\libmariadb\libmariadb\ma_client_plugin.c" />
+    <ClCompile Include="..\libmariadb\libmariadb\mariadb_async.c" />
+    <ClCompile Include="..\libmariadb\libmariadb\mariadb_charset.c" />
     <ClCompile Include="..\libmariadb\libmariadb\mariadb_lib.c" />
     <ClCompile Include="..\libmariadb\libmariadb\mariadb_stmt.c" />
+    <ClCompile Include="..\libmariadb\libmariadb\ma_alloc.c" />
+    <ClCompile Include="..\libmariadb\libmariadb\ma_array.c" />
+    <ClCompile Include="..\libmariadb\libmariadb\ma_charset.c" />
+    <ClCompile Include="..\libmariadb\libmariadb\ma_compress.c" />
+    <ClCompile Include="..\libmariadb\libmariadb\ma_context.c" />
+    <ClCompile Include="..\libmariadb\libmariadb\ma_default.c" />
+    <ClCompile Include="..\libmariadb\libmariadb\ma_dtoa.c" />
+    <ClCompile Include="..\libmariadb\libmariadb\ma_errmsg.c" />
+    <ClCompile Include="..\libmariadb\libmariadb\ma_hashtbl.c" />
+    <ClCompile Include="..\libmariadb\libmariadb\ma_init.c" />
+    <ClCompile Include="..\libmariadb\libmariadb\ma_io.c" />
+    <ClCompile Include="..\libmariadb\libmariadb\ma_list.c" />
+    <ClCompile Include="..\libmariadb\libmariadb\ma_ll2str.c" />
+    <ClCompile Include="..\libmariadb\libmariadb\ma_loaddata.c" />
+    <ClCompile Include="..\libmariadb\libmariadb\ma_net.c" />
+    <ClCompile Include="..\libmariadb\libmariadb\ma_password.c" />
+    <ClCompile Include="..\libmariadb\libmariadb\ma_pvio.c" />
+    <ClCompile Include="..\libmariadb\libmariadb\ma_sha1.c" />
+    <ClCompile Include="..\libmariadb\libmariadb\ma_stmt_codec.c" />
+    <ClCompile Include="..\libmariadb\libmariadb\ma_string.c" />
+    <ClCompile Include="..\libmariadb\plugins\auth\auth_gssapi_client.c" />
+    <ClCompile Include="..\libmariadb\plugins\auth\my_auth.c" />
+    <ClCompile Include="..\libmariadb\plugins\auth\old_password.c" />
+    <ClCompile Include="..\libmariadb\plugins\auth\sspi_client.c" />
+    <ClCompile Include="..\libmariadb\plugins\auth\sspi_errmsg.c" />
+    <ClCompile Include="..\libmariadb\plugins\compress\c_zlib.c" />
+    <ClCompile Include="..\libmariadb\plugins\pvio\pvio_npipe.c" />
+    <ClCompile Include="..\libmariadb\plugins\pvio\pvio_socket.c" />
     <ClCompile Include="..\src\BasePrepareStatement.cpp" />
     <ClCompile Include="..\src\cache\CallableStatementCache.cpp" />
     <ClCompile Include="..\src\cache\CallableStatementCacheKey.cpp" />
@@ -38,6 +69,7 @@
     <ClCompile Include="..\src\com\ColumnNameMap.cpp" />
     <ClCompile Include="..\src\com\RowProtocol.cpp" />
     <ClCompile Include="..\src\Consts.cpp" />
+    <ClCompile Include="..\src\credential\Credential.cpp" />
     <ClCompile Include="..\src\credential\CredentialPluginLoader.cpp" />
     <ClCompile Include="..\src\DriverManager.cpp" />
     <ClCompile Include="..\src\ExceptionFactory.cpp" />
@@ -61,6 +93,7 @@
     <ClCompile Include="..\src\options\Options.cpp" />
     <ClCompile Include="..\src\parameters\BooleanParameter.cpp" />
     <ClCompile Include="..\src\parameters\ByteArrayParameter.cpp" />
+    <ClCompile Include="..\src\parameters\ByteParameter.cpp" />
     <ClCompile Include="..\src\parameters\DoubleParameter.cpp" />
     <ClCompile Include="..\src\parameters\FloatParameter.cpp" />
     <ClCompile Include="..\src\parameters\IntParameter.cpp" />
@@ -71,6 +104,7 @@
     <ClCompile Include="..\src\parameters\StreamParameter.cpp" />
     <ClCompile Include="..\src\parameters\StringParameter.cpp" />
     <ClCompile Include="..\src\parameters\ULongParameter.cpp" />
+    <ClCompile Include="..\src\pool\GlobalStateInfo.cpp" />
     <ClCompile Include="..\src\protocol\capi\BinRowProtocolCapi.cpp" />
     <ClCompile Include="..\src\protocol\capi\ConnectProtocol.cpp" />
     <ClCompile Include="..\src\protocol\capi\QueryProtocol.cpp" />
@@ -85,13 +119,12 @@
     <ClCompile Include="..\src\StringImp.cpp" />
     <ClCompile Include="..\src\UrlParser.cpp" />
     <ClCompile Include="..\src\util\ClientPrepareResult.cpp" />
+    <ClCompile Include="..\src\util\LogQueryTool.cpp" />
     <ClCompile Include="..\src\util\ServerPrepareResult.cpp" />
+    <ClCompile Include="..\src\util\ServerPrepareStatementCache.cpp" />
     <ClCompile Include="..\src\util\String.cpp" />
     <ClCompile Include="..\src\util\Utils.cpp" />
     <ClCompile Include="..\src\util\Value.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="mariadb_version.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
@@ -146,14 +179,16 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(SolutionDir)src;$(SolutionDir)include;$(SolutionDir)include\conncpp;$(SolutionDir)libmariadb\include;$(SolutionDir)MariaDB_Connector;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)src;$(SolutionDir)include;$(SolutionDir)build\libmariadb\external\zlib;$(SolutionDir)include\conncpp;$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)Nuget\build\native\</OutDir>
     <TargetName>$(ProjectName).$(Configuration)</TargetName>
+    <ExternalIncludePath>$(SolutionDir)libmariadb\external\zlib;$(SolutionDir)libmariadb\include;$(SolutionDir)build\libmariadb\include;$(SolutionDir)MariaDB_Connector;$(ExternalIncludePath)</ExternalIncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(SolutionDir)src;$(SolutionDir)include;$(SolutionDir)include\conncpp;$(SolutionDir)libmariadb\include;$(SolutionDir)MariaDB_Connector;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)src;$(SolutionDir)include;$(SolutionDir)build\libmariadb\external\zlib;$(SolutionDir)include\conncpp;$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)Nuget\build\native\</OutDir>
     <TargetName>$(ProjectName).$(Configuration)</TargetName>
+    <ExternalIncludePath>$(SolutionDir)libmariadb\external\zlib;$(SolutionDir)libmariadb\include;$(SolutionDir)build\libmariadb\include;$(SolutionDir)MariaDB_Connector;$(ExternalIncludePath)</ExternalIncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -192,7 +227,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <SDLCheck>true</SDLCheck>
+      <SDLCheck>false</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -202,7 +237,8 @@
       <EnableEnhancedInstructionSet>AdvancedVectorExtensions2</EnableEnhancedInstructionSet>
       <EnableModules>true</EnableModules>
       <BuildStlModules>true</BuildStlModules>
-      <PreprocessorDefinitions>MARIADB_STATIC_LINK;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>HAVE_DLOPEN;HAVE_COMPRESS;THREAD;MARIADB_STATIC_LINK;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -215,7 +251,7 @@
       <WarningLevel>Level3</WarningLevel>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>true</SDLCheck>
+      <SDLCheck>false</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -225,7 +261,8 @@
       <EnableEnhancedInstructionSet>AdvancedVectorExtensions2</EnableEnhancedInstructionSet>
       <EnableModules>true</EnableModules>
       <BuildStlModules>true</BuildStlModules>
-      <PreprocessorDefinitions>MARIADB_STATIC_LINK;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>HAVE_DLOPEN;HAVE_COMPRESS;THREAD;MARIADB_STATIC_LINK;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>

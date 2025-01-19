@@ -29,7 +29,7 @@ ELSE()
 
   SET(LIBRARY_NAME "libmariadbcpp.so")
 
-  EXECUTE_PROCESS(COMMAND tar zxf C:/Users/vhtmf/source/repos/mariadb-connector-cpp/out/build/x64-Debug/mariadb-connector-cpp-1.0.5-win32.tar.gz)
+  EXECUTE_PROCESS(COMMAND tar zxf C:/Users/vhtmf/source/repos/mariadb-connector-cpp/build/mariadb-connector-cpp-1.0.5-win32.tar.gz)
   ADD_CUSTOM_TARGET(LIST_CONTENTS
       COMMAND ls -lR ${CMAKE_BINARY_DIR}/mariadb-connector-cpp-1.0.5-win32/lib/mariadb/*.so* ${CMAKE_BINARY_DIR}/mariadb-connector-cpp-1.0.5-win32/)
 
