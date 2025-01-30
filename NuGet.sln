@@ -6,8 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "解决方案项", "解决方案项", "{9FA3D6BD-1EC1-3BA5-80CB-CE02773A58D5}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
-		NuGet\build\native\MariaDB.Connector.targets = NuGet\build\native\MariaDB.Connector.targets
+		NuGet\MariaDB_Connector.nuspec = NuGet\MariaDB_Connector.nuspec
 		NuGet打包.ps1 = NuGet打包.ps1
+		NuGet\build\native\MariaDB_Connector.targets = NuGet\build\native\MariaDB_Connector.targets
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MariaDB_Connector", "MariaDB_Connector\MariaDB_Connector.vcxproj", "{BAF3611F-716C-4F85-B03B-A6D0498CE93D}"

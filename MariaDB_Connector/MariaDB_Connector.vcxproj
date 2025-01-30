@@ -182,13 +182,13 @@
     <IncludePath>$(SolutionDir)src;$(SolutionDir)include;$(SolutionDir)build\libmariadb\external\zlib;$(SolutionDir)include\conncpp;$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)Nuget\build\native\</OutDir>
     <TargetName>$(ProjectName).$(Configuration)</TargetName>
-    <ExternalIncludePath>$(SolutionDir)libmariadb\external\zlib;$(SolutionDir)libmariadb\include;$(SolutionDir)build\libmariadb\include;$(SolutionDir)MariaDB_Connector;$(ExternalIncludePath)</ExternalIncludePath>
+    <ExternalIncludePath>$(SolutionDir)libmariadb\external\zlib;$(SolutionDir)libmariadb\include;$(SolutionDir)build\libmariadb\include</ExternalIncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>$(SolutionDir)src;$(SolutionDir)include;$(SolutionDir)build\libmariadb\external\zlib;$(SolutionDir)include\conncpp;$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)Nuget\build\native\</OutDir>
     <TargetName>$(ProjectName).$(Configuration)</TargetName>
-    <ExternalIncludePath>$(SolutionDir)libmariadb\external\zlib;$(SolutionDir)libmariadb\include;$(SolutionDir)build\libmariadb\include;$(SolutionDir)MariaDB_Connector;$(ExternalIncludePath)</ExternalIncludePath>
+    <ExternalIncludePath>$(SolutionDir)libmariadb\external\zlib;$(SolutionDir)libmariadb\include;$(SolutionDir)build\libmariadb\include</ExternalIncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

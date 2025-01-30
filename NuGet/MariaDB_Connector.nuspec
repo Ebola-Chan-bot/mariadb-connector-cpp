@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+	<metadata>
+		<id>MariaDB_Connector</id>
+		<version>1.1.5.1</version>
+		<description>
+			这是 MariaDB 连接器/C++ 的正式发布版本。MariaDB Connector/C++ 在 GNU Lesser Public License 2.1 版下发布。许可证信息可以在 COPYING 文件中找到。许可证（LGPL 版本 2.1）。Connector 以最少的扩展来实现 JDBC API，仅移除那些在 C++ 中没有意义的方法。
+			支持的平台：x64。支持的平台工具集：v143。依赖 Visual C++ 可再发行程序包。
+		</description>
+		<authors>埃博拉酱</authors>
+		<projectUrl>https://github.com/Ebola-Chan-bot/mariadb-connector-cpp/tree/NuGet</projectUrl>
+		<tags>native Static v143 x64</tags>
+		<icon>图标.png</icon>
+		<license type="expression">LGPL-2.1-only</license>
+		<summary>适用于 C++ 的 MariaDB 连接器</summary>
+		<readme>README.md</readme>
+	</metadata>
+	<!-- 不能指定files，否则只会包含files中的文件 -->
+</package>

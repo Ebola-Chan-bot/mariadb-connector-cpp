@@ -70,7 +70,9 @@ benchmark/main-benchmark
 *.exe
 *.out
 *.app
-.vs
+/.vs
 /out/build/x64-Debug
 /src/Version.h
-build
+/build
+/MariaDB_Connector/x64
+/*.nupkg
