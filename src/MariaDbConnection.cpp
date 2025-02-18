@@ -1395,7 +1395,7 @@ namespace mariadb
     {
       try {
         auto cit= properties.find(name);
-        setClientInfo(name, cit != properties.cend() ? cit->second : "");
+        setClientInfo(name, cit != properties.cend() ? cit->second : SQLString{ "" });
       }
       catch (SQLException& /*e*/) {
 #ifdef MAYBE_IN_NEXTVERSION

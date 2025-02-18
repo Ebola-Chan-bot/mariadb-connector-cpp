@@ -10,9 +10,7 @@ wininstall/mariadb_conncpp.xml
 marconncpp.def
 maconncpp.rc
 
-*.vcxproj
 *.vcxproj.*
-*.sln
 *.suo
 *.sdf
 *.dir
@@ -72,3 +70,9 @@ benchmark/main-benchmark
 *.exe
 *.out
 *.app
+/.vs
+/out/build/x64-Debug
+/src/Version.h
+/build
+/MariaDB_Connector/x64
+/*.nupkg

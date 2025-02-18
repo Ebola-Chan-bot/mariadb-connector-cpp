@@ -381,7 +381,7 @@ namespace capi
   void ConnectProtocol::createConnection(HostAddress* hostAddress, const SQLString& username)
   {
 
-    SQLString host(hostAddress != nullptr ? hostAddress->host : "");
+      SQLString host(hostAddress != nullptr ? hostAddress->host : SQLString{ "" });
     int32_t port= hostAddress != nullptr ? hostAddress->port :3306;
 
     Unique::Credential credential;

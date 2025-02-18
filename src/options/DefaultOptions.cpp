@@ -957,7 +957,7 @@ namespace sql
                       + o->minValue.toString()
                       + (maxValue != INT32_MAX
                         ?" and smaller than " + o->maxValue.toString()
-                        :" ")
+                          : SQLString{ " " })
                       +", was \""
                       +propertyValue
                       +"\"");
