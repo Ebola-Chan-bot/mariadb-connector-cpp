@@ -7,9 +7,11 @@
 	<ItemDefinitionGroup>
 		<ClCompile>
 			<AdditionalIncludeDirectories>$(MSBuildThisFileDirectory);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+			<PreprocessorDefinitions>MARIADB_STATIC_LINK;%(PreprocessorDefinitions)</PreprocessorDefinitions>
 		</ClCompile>
 		<ResourceCompile>
 			<AdditionalIncludeDirectories>$(MSBuildThisFileDirectory);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+			<PreprocessorDefinitions>MARIADB_STATIC_LINK;%(PreprocessorDefinitions)</PreprocessorDefinitions>
 		</ResourceCompile>
 	</ItemDefinitionGroup>
 	<ItemDefinitionGroup>
