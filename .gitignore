@@ -76,3 +76,6 @@ benchmark/main-benchmark
 /build
 /MariaDB_Connector/x64
 /*.nupkg
+*.idb
+*.pdb
+/install_test/CMakeLists.txt
