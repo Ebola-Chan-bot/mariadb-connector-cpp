@@ -1078,19 +1078,23 @@ namespace capi
     try {
       std::unique_ptr<sql::bytes> ldBuffer;
       uint32_t bytesInBuffer;
+      uint64_t totalBytes= 0;
 
       serverPrepareResult->bindParameters(parameters);
 
-      for (uint32_t i= 0; i < serverPrepareResult->getParameters().size(); i++){
-        if (parameters[i]->isLongData()){
-          if (!ldBuffer)
-          {
+      for (uint32_t i= 0; i < serverPrepareResult->getParameters().size(); i++) {
+        if (parameters[i]->isLongData()) {
+          if (!ldBuffer) {
             ldBuffer.reset(new sql::bytes(MAX_PACKET_LENGTH - 4));
           }
 
-          while ((bytesInBuffer= parameters[i]->writeBinary(*ldBuffer)) > 0)
-          {
+          while ((bytesInBuffer= parameters[i]->writeBinary(*ldBuffer)) > 0) {
             capi::mysql_stmt_send_long_data(serverPrepareResult->getStatementId(), i, ldBuffer->arr, bytesInBuffer);
+            totalBytes+= bytesInBuffer;
+          }
+          // The stream is not null, but empty. We should send 0 length so the value we put in the field is not NULL
+          if (totalBytes == 0) {
+            capi::mysql_stmt_send_long_data(serverPrepareResult->getStatementId(), i, ldBuffer->arr, 0);
           }
         }
       }
@@ -1837,7 +1841,7 @@ namespace capi
       activeStream->loadFully(false, this);
       activeStreamingResult= nullptr;
     }
-
+    forceReleaseWaitingPrepareStatement();
     if (activeFutureTask){
 
       try {
@@ -1854,7 +1858,7 @@ namespace capi
             -1,
             interruptedException);
       }*/
-      /*finally*/forceReleaseWaitingPrepareStatement();
+      /*finally*/
 
       activeFutureTask= nullptr;
     }
