@@ -79,3 +79,4 @@ benchmark/main-benchmark
 *.idb
 *.pdb
 /install_test/CMakeLists.txt
+NuGet/README.md
