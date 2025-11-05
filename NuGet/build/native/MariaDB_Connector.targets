@@ -13,7 +13,7 @@
 	<ItemGroup Condition="$(ConfigurationType)=='StaticLibrary'">
 		<PropertyPageSchema Include="$(MSBuildThisFileDirectory)\链接设置.xml" />
 	</ItemGroup>
-	<ItemDefinitionGroup Condition="$(埃博拉酱_MariaDB_链接方式)=='符号' Or $(ConfigurationType)!='StaticLibrary'">
+	<ItemDefinitionGroup Condition="$(ConfigurationType)!='StaticLibrary'">
 		<Link>
 			<AdditionalDependencies>Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
 		</Link>
@@ -21,7 +21,7 @@
 	<ItemGroup Condition="$(埃博拉酱_MariaDB_链接方式)=='内联'">
 		<Library Include="Shlwapi.lib" />
 	</ItemGroup>
-	<Target Name="埃博拉酱_MariaDB_符号链接" BeforeTargets="Link" Condition="$(埃博拉酱_MariaDB_链接方式)=='符号' Or $(ConfigurationType)!='StaticLibrary'">
+	<Target Name="埃博拉酱_MariaDB_符号链接" BeforeTargets="Link" Condition="$(ConfigurationType)!='StaticLibrary'">
 		<PropertyGroup>
 			<!--ItemGroup不能直接捕获ClCompile的属性，因此需要在这里传递-->
 			<RuntimeLibrary>%(ClCompile.RuntimeLibrary)</RuntimeLibrary>
