@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-	<PropertyGroup>
-		<MariaDB_Connector_Configuration>Release</MariaDB_Connector_Configuration>
-		<MariaDB_Connector_Configuration Condition="$(UseDebugLibraries)">Debug</MariaDB_Connector_Configuration>
-	</PropertyGroup>
 	<ItemDefinitionGroup>
 		<ClCompile>
 			<AdditionalIncludeDirectories>$(MSBuildThisFileDirectory);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -16,7 +12,30 @@
 	</ItemDefinitionGroup>
 	<ItemDefinitionGroup>
 		<Link>
-			<AdditionalDependencies>Shlwapi.lib;$(MSBuildThisFileDirectory)MariaDB_Connector.$(MariaDB_Connector_Configuration).lib;%(AdditionalDependencies)</AdditionalDependencies>
+			<AdditionalDependencies>Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
 		</Link>
 	</ItemDefinitionGroup>
+	<ItemGroup Condition="$(ConfigurationType)=='StaticLibrary'">
+		<PropertyPageSchema Include="$(MSBuildThisFileDirectory)\链接设置.xml" />
+	</ItemGroup>
+	<Target Name="埃博拉酱_MariaDB_符号链接" BeforeTargets="Link" Condition="$(埃博拉酱_MariaDB_链接方式)=='符号' Or $(ConfigurationType)!='StaticLibrary'">
+		<PropertyGroup>
+			<!--ItemGroup不能直接捕获ClCompile的属性，因此需要在这里传递-->
+			<RuntimeLibrary>%(ClCompile.RuntimeLibrary)</RuntimeLibrary>
+		</PropertyGroup>
+		<ItemGroup>
+			<Link Update="@(Link)">
+				<AdditionalDependencies>$(MSBuildThisFileDirectory)MariaDB_Connector.$(RuntimeLibrary).$(PlatformToolsetVersion).lib;%(AdditionalDependencies)</AdditionalDependencies>
+			</Link>
+		</ItemGroup>
+	</Target>
+	<Target Name="埃博拉酱_MariaDB_内联链接" BeforeTargets="ClCompile" Condition="$(埃博拉酱_MariaDB_链接方式)=='内联'">
+		<PropertyGroup>
+			<!--ItemGroup不能直接捕获ClCompile的属性，因此需要在这里传递-->
+			<RuntimeLibrary>%(ClCompile.RuntimeLibrary)</RuntimeLibrary>
+		</PropertyGroup>
+		<ItemGroup>
+			<Library Include="$(MSBuildThisFileDirectory)MariaDB_Connector.$(RuntimeLibrary).$(PlatformToolsetVersion).lib" />
+		</ItemGroup>
+	</Target>
 </Project>

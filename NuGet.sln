@@ -1,34 +1,47 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.13.35617.110
+# Visual Studio Version 18
+VisualStudioVersion = 18.0.11123.170
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "解决方案项", "解决方案项", "{9FA3D6BD-1EC1-3BA5-80CB-CE02773A58D5}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 		NuGet\MariaDB_Connector.nuspec = NuGet\MariaDB_Connector.nuspec
-		NuGet打包.ps1 = NuGet打包.ps1
 		NuGet\build\native\MariaDB_Connector.targets = NuGet\build\native\MariaDB_Connector.targets
+		NuGet打包.ps1 = NuGet打包.ps1
+		NuGet\build\native\链接设置.xml = NuGet\build\native\链接设置.xml
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MariaDB_Connector", "MariaDB_Connector\MariaDB_Connector.vcxproj", "{BAF3611F-716C-4F85-B03B-A6D0498CE93D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|x64 = Debug|x64
-		Debug|x86 = Debug|x86
-		Release|x64 = Release|x64
-		Release|x86 = Release|x86
+		MD.143|x64 = MD.143|x64
+		MD.145|x64 = MD.145|x64
+		MDd.143|x64 = MDd.143|x64
+		MDd.145|x64 = MDd.145|x64
+		MT.143|x64 = MT.143|x64
+		MT.145|x64 = MT.145|x64
+		MTd.143|x64 = MTd.143|x64
+		MTd.145|x64 = MTd.145|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BAF3611F-716C-4F85-B03B-A6D0498CE93D}.Debug|x64.ActiveCfg = Debug|x64
-		{BAF3611F-716C-4F85-B03B-A6D0498CE93D}.Debug|x64.Build.0 = Debug|x64
-		{BAF3611F-716C-4F85-B03B-A6D0498CE93D}.Debug|x86.ActiveCfg = Debug|Win32
-		{BAF3611F-716C-4F85-B03B-A6D0498CE93D}.Debug|x86.Build.0 = Debug|Win32
-		{BAF3611F-716C-4F85-B03B-A6D0498CE93D}.Release|x64.ActiveCfg = Release|x64
-		{BAF3611F-716C-4F85-B03B-A6D0498CE93D}.Release|x64.Build.0 = Release|x64
-		{BAF3611F-716C-4F85-B03B-A6D0498CE93D}.Release|x86.ActiveCfg = Release|Win32
-		{BAF3611F-716C-4F85-B03B-A6D0498CE93D}.Release|x86.Build.0 = Release|Win32
+		{BAF3611F-716C-4F85-B03B-A6D0498CE93D}.MD.143|x64.ActiveCfg = MD.143|x64
+		{BAF3611F-716C-4F85-B03B-A6D0498CE93D}.MD.143|x64.Build.0 = MD.143|x64
+		{BAF3611F-716C-4F85-B03B-A6D0498CE93D}.MD.145|x64.ActiveCfg = MD.145|x64
+		{BAF3611F-716C-4F85-B03B-A6D0498CE93D}.MD.145|x64.Build.0 = MD.145|x64
+		{BAF3611F-716C-4F85-B03B-A6D0498CE93D}.MDd.143|x64.ActiveCfg = MDd.143|x64
+		{BAF3611F-716C-4F85-B03B-A6D0498CE93D}.MDd.143|x64.Build.0 = MDd.143|x64
+		{BAF3611F-716C-4F85-B03B-A6D0498CE93D}.MDd.145|x64.ActiveCfg = MDd.145|x64
+		{BAF3611F-716C-4F85-B03B-A6D0498CE93D}.MDd.145|x64.Build.0 = MDd.145|x64
+		{BAF3611F-716C-4F85-B03B-A6D0498CE93D}.MT.143|x64.ActiveCfg = MT.143|x64
+		{BAF3611F-716C-4F85-B03B-A6D0498CE93D}.MT.143|x64.Build.0 = MT.143|x64
+		{BAF3611F-716C-4F85-B03B-A6D0498CE93D}.MT.145|x64.ActiveCfg = MT.145|x64
+		{BAF3611F-716C-4F85-B03B-A6D0498CE93D}.MT.145|x64.Build.0 = MT.145|x64
+		{BAF3611F-716C-4F85-B03B-A6D0498CE93D}.MTd.143|x64.ActiveCfg = MTd.143|x64
+		{BAF3611F-716C-4F85-B03B-A6D0498CE93D}.MTd.143|x64.Build.0 = MTd.143|x64
+		{BAF3611F-716C-4F85-B03B-A6D0498CE93D}.MTd.145|x64.ActiveCfg = MTd.145|x64
+		{BAF3611F-716C-4F85-B03B-A6D0498CE93D}.MTd.145|x64.Build.0 = MTd.145|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
