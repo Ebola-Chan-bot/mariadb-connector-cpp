@@ -9,7 +9,7 @@
 		</description>
 		<authors>埃博拉酱</authors>
 		<projectUrl>https://github.com/Ebola-Chan-bot/mariadb-connector-cpp/tree/NuGet</projectUrl>
-		<tags>native Static v143 v145 x64</tags>
+		<tags>native Static v143 v145 x64 MariaDB</tags>
 		<icon>图标.png</icon>
 		<license type="expression">LGPL-2.1-only</license>
 		<summary>适用于 C++ 的 MariaDB 连接器</summary>
