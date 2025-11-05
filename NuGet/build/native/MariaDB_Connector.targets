@@ -10,13 +10,16 @@
 			<PreprocessorDefinitions>MARIADB_STATIC_LINK;%(PreprocessorDefinitions)</PreprocessorDefinitions>
 		</ResourceCompile>
 	</ItemDefinitionGroup>
-	<ItemDefinitionGroup>
+	<ItemGroup Condition="$(ConfigurationType)=='StaticLibrary'">
+		<PropertyPageSchema Include="$(MSBuildThisFileDirectory)\链接设置.xml" />
+	</ItemGroup>
+	<ItemDefinitionGroup Condition="$(埃博拉酱_MariaDB_链接方式)=='符号' Or $(ConfigurationType)!='StaticLibrary'">
 		<Link>
 			<AdditionalDependencies>Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
 		</Link>
 	</ItemDefinitionGroup>
-	<ItemGroup Condition="$(ConfigurationType)=='StaticLibrary'">
-		<PropertyPageSchema Include="$(MSBuildThisFileDirectory)\链接设置.xml" />
+	<ItemGroup Condition="$(埃博拉酱_MariaDB_链接方式)=='内联'">
+		<Library Include="Shlwapi.lib" />
 	</ItemGroup>
 	<Target Name="埃博拉酱_MariaDB_符号链接" BeforeTargets="Link" Condition="$(埃博拉酱_MariaDB_链接方式)=='符号' Or $(ConfigurationType)!='StaticLibrary'">
 		<PropertyGroup>
